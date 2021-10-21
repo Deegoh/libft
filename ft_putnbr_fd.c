@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:59:26 by tpinto-m          #+#    #+#             */
-/*   Updated: 2021/10/18 12:16:34 by tpinto-m         ###   ########.fr       */
+/*   Created: 2021/10/19 09:38:23 by tpinto-m          #+#    #+#             */
+/*   Updated: 2021/10/20 17:34:58 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	res;
-	int	sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (n == -2147483648)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	while (ft_isdigit(str[i]))
-		res = res * 10 + str[i++] - '0';
-	return (res * sign);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n <= 9)
+	{
+		n += '0';
+		ft_putchar_fd(n, fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }

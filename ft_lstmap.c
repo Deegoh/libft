@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:59:26 by tpinto-m          #+#    #+#             */
-/*   Updated: 2021/10/18 12:16:34 by tpinto-m         ###   ########.fr       */
+/*   Created: 2021/10/20 10:06:29 by tpinto-m          #+#    #+#             */
+/*   Updated: 2021/10/21 11:39:19 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
+	t_list	*res;
+	t_list	*tmp;
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	res;
-	int	sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (!lst)
+		return (NULL);
+	res = NULL;
+	while (lst)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		tmp = ft_lstnew(f(lst->content));
+		if (tmp)
+			ft_lstadd_back(&res, tmp);
+		else
+			ft_lstclear(&tmp, del);
+		lst = lst->next;
 	}
-	while (ft_isdigit(str[i]))
-		res = res * 10 + str[i++] - '0';
-	return (res * sign);
+	return (res);
 }
