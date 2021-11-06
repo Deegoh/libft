@@ -1,3 +1,5 @@
 .vscode
 .DS_Store
+libftTester/
+libft.a
 *.o
