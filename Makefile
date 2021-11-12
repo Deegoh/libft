@@ -6,13 +6,13 @@
 #    By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 18:54:17 by tpinto-m          #+#    #+#              #
-#    Updated: 2021/10/20 10:23:24 by tpinto-m         ###   ########.fr        #
+#    Updated: 2021/11/12 12:44:10 by tpinto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 SRC = ft_putnbr_fd.c\
 	  ft_putendl_fd.c\
 	  ft_putstr_fd.c\
@@ -67,13 +67,11 @@ OBJBONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): bonus
-	$(CC) $(FLAGS) -c $(SRC)
-	ar -rc $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
-bonus:
-	$(CC) $(FLAGS) -c $(BONUS)
-	ar -rc $(NAME) $(OBJBONUS)
+bonus: $(OBJBONUS)
+	ar -rcs $(NAME) $(OBJBONUS)
 
 clean:
 	rm -rf $(OBJ)
