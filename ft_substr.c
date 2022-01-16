@@ -6,7 +6,7 @@
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 09:28:10 by tpinto-m          #+#    #+#             */
-/*   Updated: 2021/10/20 17:22:26 by tpinto-m         ###   ########.fr       */
+/*   Updated: 2022/01/16 14:33:04 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!*s)
+	if (!s)
 		return (NULL);
 	slen = ft_strlen(s);
 	if (slen < len)

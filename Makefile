@@ -6,7 +6,7 @@
 #    By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 18:54:17 by tpinto-m          #+#    #+#              #
-#    Updated: 2021/11/12 12:44:10 by tpinto-m         ###   ########.fr        #
+#    Updated: 2022/01/16 14:50:48 by tpinto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRC = ft_putnbr_fd.c\
       ft_toupper.c\
       ft_tolower.c\
       ft_isprint.c\
-	  ft_isspace.c\
       ft_isascii.c\
       ft_isalnum.c\
       ft_isdigit.c\
