@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 13:58:35 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/01/16 19:36:06 by tpinto-m         ###   ########.fr       */
+/*   Created: 2021/11/05 13:52:50 by tpinto-m          #+#    #+#             */
+/*   Updated: 2022/01/17 13:28:58 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <limits.h>
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
-{
-	t_list	*last;
+int		ft_printf(const char *str, ...);
+void	ft_putchar_nb(char c, int *count);
+void	ft_putstr_nb(char *str, int *count);
+void	ft_puthex(unsigned long nb, int *count, int arg, int first);
+void	ft_putnbr_nb(int nbr, int	*count);
+void	ft_put_u_nbr_nb(unsigned int n, int *count);
 
-	if (*alst)
-	{
-		last = ft_lstlast(*alst);
-		last->next = new;
-	}
-	else
-	{
-		*alst = new;
-	}
-	return ;
-}
+#endif

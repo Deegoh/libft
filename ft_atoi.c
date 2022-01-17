@@ -6,18 +6,11 @@
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:59:26 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/01/16 14:48:16 by tpinto-m         ###   ########.fr       */
+/*   Updated: 2022/01/16 19:36:06 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(int c)
-{
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
 
 int	ft_atoi(const char *str)
 {

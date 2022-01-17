@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 13:58:35 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/01/16 19:36:06 by tpinto-m         ###   ########.fr       */
+/*   Created: 2021/10/21 17:56:23 by tpinto-m          #+#    #+#             */
+/*   Updated: 2022/01/17 13:28:58 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <fcntl.h>
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
-{
-	t_list	*last;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	if (*alst)
-	{
-		last = ft_lstlast(*alst);
-		last->next = new;
-	}
-	else
-	{
-		*alst = new;
-	}
-	return ;
-}
+char	*get_next_line(int fd);
+
+#endif

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: tpinto-m <marvin@24lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 13:58:35 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/01/16 19:36:06 by tpinto-m         ###   ########.fr       */
+/*   Created: 2022/01/16 19:40:25 by tpinto-m          #+#    #+#             */
+/*   Updated: 2022/01/16 19:40:25 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+int	ft_nbrlen(int n)
 {
-	t_list	*last;
+	int	i;
 
-	if (*alst)
+	i = 1;
+	if (n < 0)
 	{
-		last = ft_lstlast(*alst);
-		last->next = new;
+		i++;
+		n *= -1;
 	}
-	else
+	while (9 < n)
 	{
-		*alst = new;
+		n /= 10;
+		i++;
 	}
-	return ;
+	return (i);
 }

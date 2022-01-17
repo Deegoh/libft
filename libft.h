@@ -6,16 +6,18 @@
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:10:28 by tpinto-m          #+#    #+#             */
-/*   Updated: 2021/11/12 12:47:54 by tpinto-m         ###   ########.fr       */
+/*   Updated: 2022/01/17 13:42:02 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>	
-# include <stdio.h>	
-# include <unistd.h>	
+# include <string.h>
+# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct s_list
 {
@@ -23,6 +25,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int		ft_isspace(int c);
+int		ft_nbrlen(int n);
 void	ft_putchar(char c);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
