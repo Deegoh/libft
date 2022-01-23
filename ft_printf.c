@@ -25,7 +25,7 @@ void	check_arg(int i, const char *str, va_list ap, int *count)
 	else if (str[i] == 'i')
 		ft_putnbr_nb(va_arg(ap, int), count);
 	else if (str[i] == 'u')
-		ft_put_u_nbr_nb(va_arg(ap, unsigned int), count);
+		ft_put_u_nbr_nb(va_arg(ap, long int), count);
 	else if (str[i] == 'x')
 		ft_puthex(va_arg(ap, unsigned int), count, str[i], 1);
 	else if (str[i] == 'X')

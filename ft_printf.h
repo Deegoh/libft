@@ -20,6 +20,6 @@ void	ft_putchar_nb(char c, int *count);
 void	ft_putstr_nb(char *str, int *count);
 void	ft_puthex(unsigned long nb, int *count, int arg, int first);
 void	ft_putnbr_nb(int nbr, int	*count);
-void	ft_put_u_nbr_nb(unsigned int n, int *count);
+void	ft_put_u_nbr_nb(long int n, int *count);
 
 #endif

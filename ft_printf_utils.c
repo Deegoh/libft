@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_put_u_nbr_nb(unsigned int n, int *count)
+void	ft_put_u_nbr_nb(long int n, int *count)
 {
 	if (n < 0)
 	{
