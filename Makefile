@@ -3,13 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+         #
+#    By: tpinto-m <marvin@24lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 18:54:17 by tpinto-m          #+#    #+#              #
-#   Updated: 2022/01/17 13:26:27 by tpinto-m         ###   ########.fr       # #
+#    Updated: 2022/05/02 20:32:31 by tpinto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#color
+GREEN = \e[32m
+RED = \e[31m
+WHITE = \e[39m
+YELLOW = \e[33m
+#libft
 CC = cc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
@@ -61,21 +67,27 @@ SRC = ft_putnbr_fd.c\
 		ft_nbrlen.c\
 		get_next_line.c\
 		ft_printf.c\
-		ft_printf_utils.c
+		ft_printf_utils.c\
+		ft_bool.c\
+		ft_atol.c\
+		ft_remove_str.c
 
-OBJ = $(SRC:.c=.o)
+@OBJ = $(SRC:.c=.o)
 
 .PHONY: all clean fclean re bonus so
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
+	@echo "$(GREEN)🚀 Creating libft$(WHITE)"
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
+	@echo "$(YELLOW)♻️ Clean libft$(WHITE)"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "$(RED)🗑️ Remove libft$(WHITE)"
 
 re: fclean all

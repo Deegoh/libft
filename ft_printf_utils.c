@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: tpinto-m <marvin@24lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:32:34 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/01/17 13:31:41 by tpinto-m         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:39:54 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_put_u_nbr_nb(long int n, int *count)
 {
-	if (n < 0)
+	if ((int)n < 0)
 	{
 		n -= UINT_MAX - 1;
 		ft_putnbr_nb(n, count);

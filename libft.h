@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: tpinto-m <marvin@24lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:10:28 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/01/17 13:42:02 by tpinto-m         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:43:42 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_bzero(void *str, size_t n);
 void	*ft_memset(void *str, int c, size_t n);
+int		ft_bool(int btn);
+long	ft_atol(const char *str);
+char	*ft_remove_str(char *str, const char *sub);
 #endif
