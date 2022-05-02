@@ -6,7 +6,7 @@
 #    By: tpinto-m <marvin@24lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 18:54:17 by tpinto-m          #+#    #+#              #
-#    Updated: 2022/05/02 20:32:31 by tpinto-m         ###   ########.fr        #
+#    Updated: 2022/05/02 21:16:08 by tpinto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,14 +80,14 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar -rcs $(NAME) $(OBJ)
-	@echo "$(GREEN)🚀 Creating libft$(WHITE)"
-
+	@printf "\r$(GREEN)🚀 Creating libft$(WHITE)\n"
+	@sleep 0.5
 clean:
 	@rm -rf $(OBJ)
-	@echo "$(YELLOW)♻️ Clean libft$(WHITE)"
-
+	@printf "\r$(YELLOW)♻️  Clean libft$(WHITE)"
+	@sleep 0.5
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "$(RED)🗑️ Remove libft$(WHITE)"
-
+	@printf "\r$(RED)🗑️  Remove libft$(WHITE)"
+	@sleep 0.5
 re: fclean all
