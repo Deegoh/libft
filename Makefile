@@ -6,7 +6,7 @@
 #    By: tpinto-m <marvin@24lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 18:54:17 by tpinto-m          #+#    #+#              #
-#    Updated: 2022/05/02 21:16:08 by tpinto-m         ###   ########.fr        #
+#    Updated: 2022/05/03 22:29:05 by tpinto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,22 +72,25 @@ SRC = ft_putnbr_fd.c\
 		ft_atol.c\
 		ft_remove_str.c
 
-@OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 .PHONY: all clean fclean re bonus so
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar -rcs $(NAME) $(OBJ)
-	@printf "\r$(GREEN)🚀 Creating libft$(WHITE)\n"
+	ar -rcs $(NAME) $(OBJ)
+	@printf "$(GREEN)🚀 Creating $(NAME)$(WHITE)\n"
 	@sleep 0.5
+
 clean:
-	@rm -rf $(OBJ)
-	@printf "\r$(YELLOW)♻️  Clean libft$(WHITE)"
+	rm -rf $(OBJ)
+	@printf "$(YELLOW)♻️  Clean $(NAME)$(WHITE)\n"
 	@sleep 0.5
+
 fclean: clean
-	@rm -rf $(NAME)
-	@printf "\r$(RED)🗑️  Remove libft$(WHITE)"
+	rm -rf $(NAME)
+	@printf "$(RED)🗑️  Remove $(NAME)$(WHITE)\n"
 	@sleep 0.5
+
 re: fclean all
