@@ -6,7 +6,7 @@
 /*   By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:10:28 by tpinto-m          #+#    #+#             */
-/*   Updated: 2022/07/25 10:23:25 by tpinto-m         ###   ########.fr       */
+/*   Updated: 2022/07/25 10:51:51 by tpinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,10 @@ void	*ft_memset(void *str, int c, size_t n);
 int		ft_bool(int btn);
 long	ft_atol(const char *str);
 char	*ft_remove_str(char *str, const char *sub);
+char	*ft_strjoin_f(char *s1, char *s2, int mode);
+size_t	ft_arrlen(char **arr);
+int		ft_strcmp(char *s1, char *s2);
+char	*ft_strsubreplace(const char *s, const char *set, const char *sub);
+char	*ft_strtrim_f(char *s1, char const *set);
+
 #endif

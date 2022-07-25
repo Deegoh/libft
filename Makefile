@@ -6,7 +6,7 @@
 #    By: tpinto-m <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 18:54:17 by tpinto-m          #+#    #+#              #
-#    Updated: 2022/07/25 10:31:08 by tpinto-m         ###   ########.fr        #
+#    Updated: 2022/07/25 10:48:43 by tpinto-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ GREEN = \e[32m
 RED = \e[31m
 WHITE = \e[39m
 YELLOW = \e[33m
+RESET = \e[0m
 #libft
-CC = cc
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 SRC = ft_putnbr_fd.c\
@@ -84,18 +84,20 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
-	@printf "$(GREEN)🚀 Creating $(NAME)$(WHITE)\n"
-	@sleep 0.5
+	@printf "\n$(RESET)"
+	@ar -rcs $(NAME) $(OBJ)
+	@printf "$(GREEN)🏗️ Generate $(NAME)$(WHITE)\n"
+
+%.o: %.c
+	@printf "$(GREEN)🏗️ Generate libft objects %-33.33s\r" $@
+	@$(CC) ${CFLAGS} -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
-	@printf "$(YELLOW)♻️  Clean $(NAME)$(WHITE)\n"
-	@sleep 0.5
+	@rm -rf $(OBJ)
+	@printf "$(YELLOW)♻️ Clean libft objects$(WHITE)\n"
 
 fclean: clean
-	rm -rf $(NAME)
-	@printf "$(RED)🗑️  Remove $(NAME)$(WHITE)\n"
-	@sleep 0.5
+	@rm -rf $(NAME)
+	@printf "$(RED)🗑️ Remove $(NAME)$(WHITE)\n"
 
 re: fclean all
